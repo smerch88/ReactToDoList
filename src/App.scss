@@ -41,6 +41,8 @@
   &__button {
     font-weight: 600;
 
+    background: white;
+
     color: #4e54c8;
     border: 0;
 
@@ -55,5 +57,14 @@
       scale: 1.1;
       translate: 4px;
     }
+  }
+}
+
+.filter-buttons {
+  display: flex;
+  border: 0;
+
+  button {
+    width: 100%;
   }
 }

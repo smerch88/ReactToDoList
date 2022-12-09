@@ -29,6 +29,40 @@ export class TaskForm extends Component {
       }));
   };
 
+  todoButtonClickHandler = (e) => {
+    const cardsDone = document.querySelectorAll(".done");
+    const cardsNotDone = document.querySelectorAll(".notdone");
+
+    cardsDone.forEach((card) => {
+      card.style.display = "none";
+    });
+
+    cardsNotDone.forEach((card) => {
+      card.style.display = "flex";
+    });
+  };
+
+  doneButtonClickHandler = (e) => {
+    const cardsDone = document.querySelectorAll(".done");
+    const cardsNotDone = document.querySelectorAll(".notdone");
+
+    cardsNotDone.forEach((card) => {
+      card.style.display = "none";
+    });
+
+    cardsDone.forEach((card) => {
+      card.style.display = "flex";
+    });
+  };
+
+  allButtonClickHandler = (e) => {
+    const cardsAll = document.querySelectorAll(".todo__task-wrapper");
+
+    cardsAll.forEach((card) => {
+      card.style.display = "flex";
+    });
+  };
+
   render() {
     return (
       <>
@@ -41,6 +75,29 @@ export class TaskForm extends Component {
           />
           <button className="todo__button">Save</button>
         </form>
+        <div className="filter-buttons">
+          <button
+            type="button"
+            className="todo__button"
+            onClick={this.todoButtonClickHandler}
+          >
+            To Do
+          </button>
+          <button
+            type="button"
+            className="todo__button"
+            onClick={this.doneButtonClickHandler}
+          >
+            Done
+          </button>
+          <button
+            type="button"
+            className="todo__button"
+            onClick={this.allButtonClickHandler}
+          >
+            All
+          </button>
+        </div>
         <div>
           {this.state.tasks.map(({ task }, index) => (
             <TaskItem key={task + index} task={task} index={index} />
