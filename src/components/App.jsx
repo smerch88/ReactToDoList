@@ -43,14 +43,8 @@ export default class App extends Component {
     }));
   };
 
-  showUpdateForm = taskId => {
-    const { tasks } = this.state;
-    const task = tasks.find(({ id }) => id === taskId);
-    this.setState({ taskToUpdate: task });
-  };
-
   render() {
-    const { addTask, deleteTask, toggleCompleted, showUpdateForm } = this;
+    const { addTask, deleteTask, toggleCompleted } = this;
     return (
       <>
         <ToDoForm addTask={addTask} />
@@ -58,7 +52,6 @@ export default class App extends Component {
           tasks={this.state.tasks}
           deleteTask={deleteTask}
           onToggleCompleted={toggleCompleted}
-          showUpdateForm={showUpdateForm}
         />
       </>
     );

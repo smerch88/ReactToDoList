@@ -15,7 +15,7 @@ export class RenderTasks extends Component {
   };
 
   render() {
-    const { tasks, deleteTask, onToggleCompleted, showUpdateForm } = this.props;
+    const { tasks, deleteTask, onToggleCompleted } = this.props;
     return (
       <>
         <ButtonsList>
@@ -68,9 +68,6 @@ export class RenderTasks extends Component {
                   onChange={() => onToggleCompleted(task.id)}
                 />
                 <Button onClick={() => deleteTask(task.id)}>Delete</Button>
-                <Button onClick={() => showUpdateForm(task.id)}>
-                  Update task
-                </Button>
               </li>
             ))}
         </TasksList>
