@@ -1,0 +1,25 @@
+.todo {
+  &__task-text {
+    margin-left: 4px;
+  }
+  &__task-number {
+    font-weight: 800;
+  }
+
+  &__task-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    background: white;
+    margin: 16px 4px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    transition-duration: 200ms;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+}
