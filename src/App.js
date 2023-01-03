@@ -1,7 +1,7 @@
 import "./App.scss";
 
 import { TaskForm } from "./components/TaskForm";
-import { AnimatedBackground } from "./components/AnimatedBackground/AnimatedBackground";
+import { AnimatedBackground } from "./AnimatedBackground/AnimatedBackground";
 
 function App() {
   return (

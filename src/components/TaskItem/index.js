@@ -7,32 +7,24 @@ export class TaskItem extends Component {
     super(props);
 
     this.state = {
-      done: "notdone",
+      done: true,
       click: 0,
     };
   }
 
   onTaskClickHandler = (e) => {
-    if (this.state.click % 2) {
-      this.setState((prev) => ({
-        ...prev,
-        done: "notdone",
-        click: ++prev.click,
-      }));
-    } else {
-      this.setState((prev) => ({
-        ...prev,
-        done: "done",
-        click: ++prev.click,
-      }));
-    }
-    e.currentTarget.className = this.done;
+    this.setState(({ done }) => ({
+      done: !done,
+    }));
+    !this.state.done
+      ? (e.currentTarget.className = "todo__task-wrapper notdone")
+      : (e.currentTarget.className = "todo__task-wrapper done");
   };
 
   render() {
     return (
       <div
-        className={`todo__task-wrapper ${this.state.done}`}
+        className={`todo__task-wrapper notdone`}
         onClick={this.onTaskClickHandler}
       >
         <p className="todo__task-number">#{this.props.index}</p>
